@@ -1,0 +1,473 @@
+/* Defaults
+---------------------------------------------------------------------------- */
+
+/* Typographical Elements
+--------------------------------------------- */
+
+html {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	background-color: $white;
+	color: $dark-grey;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	font-weight: 400;
+	line-height: $base-line-height;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+// button,
+// input:focus,
+// input[type="button"],
+// input[type="reset"],
+// input[type="submit"],
+// textarea:focus,
+// .button,
+// .gallery img {
+// 	transition: all 0.2s ease-in-out;
+// }
+
+a {
+	color: $green;
+	text-decoration: none;
+	// transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+a:focus,
+a:hover {
+	color: $dark-grey;
+}
+
+p {
+	margin: 0 0 20px;
+	padding: 0;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+hr {
+	border: none;
+	border-collapse: collapse;
+	border-top: 1px solid $light-grey;
+	clear: both;
+	margin: 20px 0;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+blockquote,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+mark {
+	background: $light-grey;
+	color: $dark-grey;
+}
+
+blockquote {
+	margin: 20px;
+}
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $headings-font-family;
+	font-weight: 400;
+	line-height: $headings-line-height;
+	margin: 0 0 20px;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+h2 {
+	font-size: 27px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+/* Objects
+--------------------------------------------- */
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	vertical-align: top;
+}
+
+figure {
+	margin: 0;
+}
+
+/* Gallery
+--------------------------------------------- */
+
+.gallery {
+	overflow: hidden;
+
+	img {
+		height: auto;
+		padding: 4px;
+	}
+
+	img:focus,
+	img:hover {
+		outline: none;
+	}
+}
+
+
+
+.gallery-columns-1 .gallery-item {
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	width: 33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	width: 16.6666%;
+}
+
+.gallery-columns-7 .gallery-item {
+	width: 14.2857%;
+}
+
+.gallery-columns-8 .gallery-item {
+	width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	width: 11.1111%;
+}
+
+.gallery-columns-2 .gallery-item:nth-child(2n+1),
+.gallery-columns-3 .gallery-item:nth-child(3n+1),
+.gallery-columns-4 .gallery-item:nth-child(4n+1),
+.gallery-columns-5 .gallery-item:nth-child(5n+1),
+.gallery-columns-6 .gallery-item:nth-child(6n+1),
+.gallery-columns-7 .gallery-item:nth-child(7n+1),
+.gallery-columns-8 .gallery-item:nth-child(8n+1),
+.gallery-columns-9 .gallery-item:nth-child(9n+1) {
+	clear: left;
+}
+
+.gallery-item {
+	float: left;
+	margin: 0 0 20px;
+	text-align: center;
+}
+
+
+
+/* Tables
+--------------------------------------------- */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 2;
+	margin-bottom: 20px;
+	width: 100%;
+	word-break: break-all;
+}
+
+tbody {
+	border-bottom: 1px solid $light-grey;
+}
+
+td,
+th {
+	text-align: left;
+}
+
+td {
+	border-top: 1px solid $light-grey;
+	padding: 6px;
+}
+
+th {
+	font-weight: 400;
+	padding: 0 6px;
+}
+
+td:first-child,
+th:first-child {
+	padding-left: 0;
+}
+
+
+
+
+
+/* Common Classes
+---------------------------------------------------------------------------- */
+
+/* Avatar
+--------------------------------------------- */
+
+.avatar {
+	border-radius: 50%;
+	float: left;
+}
+
+.author-box .avatar,
+.alignleft .avatar {
+	margin-right: 20px;
+}
+
+.alignright .avatar {
+	margin-left: 20px;
+}
+
+.comment .avatar {
+	margin: 0 15px 20px 0;
+}
+
+/* Genesis
+--------------------------------------------- */
+
+.after-entry,
+.archive-description,
+.author-box {
+	margin-bottom: 20px;
+}
+
+.after-entry .widget:last-of-type {
+	margin-bottom: 0;
+}
+
+.breadcrumb {
+	font-size: 16px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+
+.archive-description p:last-child,
+.author-box p:last-child {
+	margin-bottom: 0;
+}
+
+
+
+/* Titles
+--------------------------------------------- */
+
+.archive-description .entry-title,
+.archive-title,
+.author-box-title {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.entry-title {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+.entry-title a,
+.sidebar .widget-title a {
+	color: $dark-grey;
+}
+
+.entry-title a:focus,
+.entry-title a:hover {
+	color: $green;
+}
+
+.widget-title {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+/* WordPress
+--------------------------------------------- */
+
+a.aligncenter img {
+	display: block;
+	margin: 0 auto;
+}
+
+a.alignnone {
+	display: inline-block;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+a.alignleft,
+a.alignnone,
+a.alignright {
+	max-width: 100%;
+}
+
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto 20px;
+}
+
+img.alignnone,
+.alignnone {
+	margin-bottom: 15px;
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 20px 20px 0;
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 0 20px 20px;
+}
+
+.gallery-caption,
+.wp-caption-text {
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0;
+	text-align: center;
+}
+
+.entry-content p.wp-caption-text {
+	margin-bottom: 0;
+}
+
+.entry-content .wp-audio-shortcode,
+.entry-content .wp-playlist,
+.entry-content .wp-video {
+	margin: 0 0 20px;
+}
+
+/* Widgets
+---------------------------------------------------------------------------- */
+
+.widget {
+	margin-bottom: 40px;
+}
+
+.widget p:last-child,
+.widget ul > li:last-of-type {
+	margin-bottom: 0;
+}
+
+.widget ul > li {
+	margin-bottom: 10px;
+}
+
+.widget ul > li:last-of-type {
+	padding-bottom: 0;
+}
+
+.widget ol > li {
+	list-style-position: inside;
+	list-style-type: decimal;
+	padding-left: 20px;
+	text-indent: -20px;
+}
+
+.widget li li {
+	border: 0;
+	margin: 0 0 0 20px;
+	padding: 0;
+}
+
+.widget_calendar table {
+	width: 100%;
+}
+
+.widget_calendar td,
+.widget_calendar th {
+	text-align: center;
+}
+
+/* Featured Content
+--------------------------------------------- */
+
+// .featured-content .entry {
+// 	border-bottom: 1px solid $light-grey;
+// 	margin-bottom: 20px;
+// }
+
+// .featured-content .entry:last-of-type {
+// 	border-bottom: none;
+// 	margin-bottom: 0;
+// }
+
+// .featured-content .entry-title {
+// 	font-size: 16px;
+// 	margin-bottom: 5px;
+// 	margin-top: 10px;
+// }

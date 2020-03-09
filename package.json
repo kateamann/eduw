@@ -1,0 +1,32 @@
+{
+  "name": "eduw",
+  "version": "1.0.0",
+  "description": "Genesis child theme for Edinburgh Unwrapped",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kateamann/eduw.git"
+  },
+  "author": "Kate Amann",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/kateamann/eduw/issues"
+  },
+  "homepage": "https://github.com/kateamann/eduw#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.4.10",
+    "css-mqpacker": "^7.0.0",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}

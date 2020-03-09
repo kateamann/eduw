@@ -1,0 +1,30 @@
+/*
+Theme Name: Edinburgh Unwrapped
+Description: Custom child theme for the <a href="http://genesistheme.com">Genesis Framework</a>.
+Author: Kate Amann
+Author URI: https://kateamann.com/
+Version: 1.0.0
+License:     GPL-2.0+
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: genesis
+
+Text Domain: eduw
+*/
+
+
+@media only screen and (min-width: 960px ) { /* tablet portrait */ }
+
+
+@import "partials/variables";
+
+
+@import "partials/reset";
+@import "partials/blocks";
+// @import "partials/contact-info";
+@import "partials/forms";
+@import "partials/layout";
+@import "partials/navigation";
+@import "partials/site-header";
+@import "partials/content-area";
+@import "partials/gutenberg";
+@import "partials/site-footer";

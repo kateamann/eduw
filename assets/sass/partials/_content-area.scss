@@ -1,0 +1,162 @@
+/* Content Area
+---------------------------------------------------------------------------- */
+
+/* Entry Content
+--------------------------------------------- */
+
+.entry {
+	margin-bottom: 40px;
+}
+
+.entry-content {
+	ol,
+	ul {
+		margin-bottom: 20px;
+		padding-left: 40px;
+	}
+
+	ol > li {
+		list-style-type: decimal;
+	}
+
+	ul > li {
+		list-style-type: disc;
+	}
+
+	ol ul > li,
+	ul ul > li {
+		list-style-type: circle;
+	}
+
+	ol ol,
+	ul ul {
+		margin-bottom: 0;
+	}
+
+	code {
+		background-color: $lighter-grey;
+	}
+}
+
+.content .sticky {
+	background-color: $lighter-grey;
+	padding: 30px;
+}
+
+/* Entry Meta
+--------------------------------------------- */
+
+p.entry-meta {
+	font-size: 14px;
+	margin-bottom: 0;
+}
+
+.entry-header .entry-meta {
+	margin-bottom: 20px;
+}
+
+.entry-footer .entry-meta {
+	padding-top: 20px;
+}
+
+.entry-categories,
+.entry-tags {
+	display: block;
+}
+
+.entry-comments-link::before {
+	content: "\2014";
+	margin: 0 6px 0 2px;
+}
+
+/* Pagination
+--------------------------------------------- */
+
+.pagination {
+	clear: both;
+	margin: 20px 0;
+}
+
+.adjacent-entry-pagination {
+	margin-bottom: 0;
+}
+
+.archive-pagination {
+	li {
+		display: inline;
+
+		a {
+			background-color: $lighter-grey;
+			color: #333;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 15px;
+			font-weight: 600;
+			margin-bottom: 4px;
+			padding: 8px 12px;
+			text-decoration: none;
+		}
+	}
+
+	li a:focus,
+	li a:hover,
+	li.active a {
+		background-color: $dark-grey;
+		color: $white;
+	}
+}
+
+
+
+/* Entry Comments
+--------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	margin-bottom: 20px;
+}
+
+.comment-list li {
+	padding: 40px 0 0 30px;
+}
+
+.comment-list .depth-1 {
+	padding-left: 0;
+}
+
+.comment-header {
+	margin-bottom: 20px;
+}
+
+.comment-content {
+	clear: both;
+}
+
+.comment-content ul > li {
+	list-style-type: disc;
+}
+
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+	width: 50%;
+}
+
+.comment-respond label {
+	display: block;
+	margin-right: 12px;
+}
+
+.comment-header p {
+	margin-bottom: 0;
+}
+
+.entry-pings .reply {
+	display: none;
+}
+
+.comment-form-cookies-consent label {
+	display: inline;
+	padding-left: 10px;
+}

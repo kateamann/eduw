@@ -1,0 +1,164 @@
+<?php
+/**
+ * Genesis Changes
+ *
+ * @package 	EdinburghUnwrapped
+ * @author  	Kate Amann
+ * @since  		1.0.0
+ * @license 	GPL-2.0+
+ */
+
+// Theme Supports
+add_theme_support( 'html5', array( 
+	'search-form', 
+	'comment-form', 
+	'comment-list', 
+	'gallery', 
+	'caption' 
+) );
+
+add_theme_support( 'genesis-responsive-viewport' );
+
+add_theme_support( 'genesis-footer-widgets', 2 );
+
+add_theme_support( 'genesis-structural-wraps', array(  
+	'menu-secondary', 
+	'site-inner', 
+	'footer-widgets', 
+	'footer' 
+) );
+
+add_theme_support( 'genesis-menus', array( 
+	'primary' => 'Primary Navigation Menu', 
+	'secondary' => 'Secondary Navigation Menu', 
+) );
+
+// Adds support for accessibility.
+add_theme_support( 'genesis-accessibility', array(
+	'404-page',
+//	'drop-down-menu',
+	'headings',
+	'rems',
+	'search-form',
+	'skip-links',
+	'screen-reader-text',
+) );
+
+// Remove Genesis Layout Settings
+remove_theme_support( 'genesis-inpost-layouts' );
+
+// Remove Genesis Scripts Settings
+add_action( 'admin_menu' , 'remove_genesis_page_post_scripts_box' );
+function remove_genesis_page_post_scripts_box() {
+
+	$types = array( 'post','page' );
+
+	remove_meta_box( 'genesis_inpost_scripts_box', $types, 'normal' ); 
+}
+
+//* Remove Genesis in-post SEO Settings
+remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
+
+
+// add_action( 'init', 'custom_post_type_support', 11 );
+// function custom_post_type_support() {
+// 	remove_post_type_support( 'page', array( 'genesis-seo', 'genesis-scripts', 'genesis-layouts' ) );
+// 	// remove_post_type_support( 'post-type', 'genesis-seo' );
+// 	// remove_post_type_support( 'post-type', 'genesis-scripts' );
+// 	// remove_post_type_support( 'post-type', 'genesis-layouts' );
+// }
+
+// Remove admin bar styling
+// add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
+
+// Remove Edit link
+add_filter( 'genesis_edit_post_link', '__return_false' );
+
+// Remove Genesis Favicon (use site icon instead)
+remove_action( 'wp_head', 'genesis_load_favicon' );
+
+// Remove Header Description
+remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+
+// Removes site layouts.
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+genesis_unregister_layout( 'sidebar-content-sidebar' );
+genesis_unregister_layout( 'sidebar-sidebar-content' );
+
+// Remove sidebar layouts
+unregister_sidebar( 'header-right' );
+unregister_sidebar( 'sidebar' );
+unregister_sidebar( 'sidebar-alt' );
+
+// Adds support for after entry widget.
+// add_theme_support( 'genesis-after-entry-widget-area' );
+
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+
+
+
+// Custom sidebars
+genesis_register_sidebar( 
+	array( 
+		'id' => 'blog-sidebar', 
+		'name' => 'Blog Sidebar'
+	) 
+);
+
+/**
+ * Display Blog Sidebar
+ * 
+ */
+function eduw_blog_sidebar() {
+	if( is_singular( 'post' ) ) {
+		add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_content_sidebar' );
+		remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+		dynamic_sidebar( 'blog-sidebar' );
+	}
+}
+add_action( 'genesis_sidebar', 'eduw_blog_sidebar', 6 );
+
+
+/**
+ * Archive Post Class
+ * @since 1.0.0
+ *
+ * Breaks the posts into two columns
+ * @link http://www.billerickson.net/code/grid-loop-using-post-class
+ *
+ * @param array $classes
+ * @return array
+ */
+function is_archive_post_class( $classes ) {
+	// Don't run on single posts or pages
+	if( is_singular() )
+		return $classes;
+	$classes[] = 'one-half';
+	global $wp_query;
+	if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 2 )
+		$classes[] = 'first';
+	return $classes;
+}
+add_filter( 'post_class', 'is_archive_post_class' );
+
+// Archive layouts
+add_action( 'genesis_header', 'is_post_layout' );
+function is_post_layout() {
+	if ( !is_front_page() && !is_single() ) {
+		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+		add_action( 'genesis_entry_header', 'genesis_do_post_image', 5 );
+
+		// remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+	}
+}
+
+/**
+ * Remove Genesis Templates
+ *
+ */
+function eduw_remove_genesis_templates( $page_templates ) {
+	unset( $page_templates['page_archive.php'] );
+	unset( $page_templates['page_blog.php'] );
+	return $page_templates;
+}
+add_filter( 'theme_page_templates', 'eduw_remove_genesis_templates' );
