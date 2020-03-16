@@ -83,12 +83,13 @@
 
 	a {
 		color: $dark-grey;
+		background-color: $white;
 		display: block;
-		font-size: 15px;
+		font-size: 16px;
 		font-weight: 400;
 		outline-offset: -1px;
-		padding-bottom: 12px;
-		padding-top: 12px;
+		padding-bottom: 15px;
+		padding-top: 15px;
 		text-decoration: none;
 	}	
 
@@ -97,7 +98,8 @@
 	.current-menu-item > a,
 	.sub-menu .current-menu-item > a:focus,
 	.sub-menu .current-menu-item > a:hover {
-		color: $green;
+		color: $white;
+		background-color: $purple;
 		text-decoration: none;
 	}
 
@@ -128,8 +130,7 @@
 		}
 
 		a {
-			background-color: $white;
-			font-size: 14px;
+			font-size: 16px;
 			position: relative;
 			word-wrap: break-word;
 
@@ -169,7 +170,7 @@
 
 		& > .menu-highlight > a:focus,
 		& > .menu-highlight > a:hover {
-			background-color: $green;
+			background-color: $purple;
 		}
 
 		.sub-menu .sub-menu {
@@ -200,13 +201,17 @@
 	display: none;
 	position: relative;
 
+	.genesis-nav-menu .menu-item:hover > .sub-menu {
+		display: none;
+	}
+
 	@media only screen and (min-width: $small-screen) {
 		display: block;
 		padding-top: 15px;
-	}
 
-	.genesis-nav-menu .menu-item:hover > .sub-menu {
-		display: none;
+		.genesis-nav-menu .menu-item:hover > .sub-menu {
+			display: block;
+		}
 	}
 }
 
@@ -234,7 +239,7 @@
 .sub-menu-toggle:hover {
 	background-color: transparent;
 	border-width: 0;
-	color: $green;
+	color: $purple;
 }
 
 .menu-toggle {
@@ -245,18 +250,6 @@
 	padding: 15px 0;
 	position: relative;
 	z-index: 1000;
-}
-
-.menu-toggle.activated::before {
-	content: "\f335";
-}
-
-.site-header .menu-toggle::before {
-	float: left;
-	margin-right: 5px;
-	position: relative;
-	text-rendering: auto;
-	top: 1px;
 }
 
 .sub-menu-toggle {
@@ -295,7 +288,19 @@
 	@media only screen and (min-width: $small-screen) {
 		clear: none;
 		float: right;
+		padding-top: 0;
+		padding-bottom: 0;
 		width: auto;
+
+		ul li.menu-item-has-children > a::after, 
+		ul li.page-item-has-children > a::after {
+			content: "\f107";
+	    	display: inline-block;
+	    	font-family: "Font Awesome 5 Free";
+			margin-left: 10px;
+			font-weight: 900;
+			line-height: .8;
+		}
 
 		.genesis-nav-menu a {
 			padding-left: 15px;
@@ -323,14 +328,15 @@
 	margin-left: 10px;
 	margin-right: 10px;
 	padding: 0;
+	background-color: $purple;
 }
 
 
 /* Hamburgers
 --------------------------------------------- */
 .hamburger {
-	height: 140px;
-	padding: 20px;
+	height: 60px;
+	padding: 16px 0 16px 10px;
 	display: inline-block;
 	cursor: pointer;
 	transition-property: opacity, filter;
@@ -354,7 +360,7 @@
 }
 
 .hamburger-box {
-	width: 40px;
+	width: 30px;
 	height: 24px;
 	display: inline-block;
 	position: relative; 
@@ -369,7 +375,7 @@
 .hamburger-inner, 
 .hamburger-inner::before, 
 .hamburger-inner::after {
-    width: 40px;
+    width: 30px;
     height: 4px;
     background-color: #000;
     border-radius: 4px;

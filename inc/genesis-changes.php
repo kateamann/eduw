@@ -93,8 +93,17 @@ unregister_sidebar( 'sidebar-alt' );
 // Adds support for after entry widget.
 // add_theme_support( 'genesis-after-entry-widget-area' );
 
-add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
-
+add_filter( 'genesis_pre_get_option_site_layout', 'custom_set_single_posts_layout' );
+/**
+ * Apply Content Sidebar content layout to single posts.
+ * 
+ * @return string layout ID.
+ */
+function custom_set_single_posts_layout() {
+    if ( is_singular( 'post' ) ) {
+        return 'content-sidebar';
+    }
+}
 
 
 // Custom sidebars
@@ -111,7 +120,6 @@ genesis_register_sidebar(
  */
 function eduw_blog_sidebar() {
 	if( is_singular( 'post' ) ) {
-		add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_content_sidebar' );
 		remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 		dynamic_sidebar( 'blog-sidebar' );
 	}
@@ -119,11 +127,46 @@ function eduw_blog_sidebar() {
 add_action( 'genesis_sidebar', 'eduw_blog_sidebar', 6 );
 
 
+
+
+add_action( 'genesis_before_entry', 'eduw_featured_image' );
+/**
+ * Display featured image (if present) before entry on single Posts
+ */
+function eduw_featured_image() {
+    // if we are not on a single Post having a featured image, abort.
+    if ( ! ( is_singular( 'post' ) && has_post_thumbnail() ) ) {
+        return;
+    }
+
+    // get the URL of featured image.
+    $image = genesis_get_image( 'format=url&size=eduw_featured' );
+
+    // get the alt text of featured image.
+    $thumb_id = get_post_thumbnail_id( get_the_ID() );
+    $alt = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
+
+    // if no alt text is present for featured image, set it to Post title.
+    if ( '' === $alt ) {
+        $alt = the_title_attribute( 'echo=0' );
+    }
+
+    // get the caption of featured image.
+    $caption = get_post( $thumb_id )->post_excerpt;
+
+    // build the caption HTML if caption is present for the featured image..
+    $caption_html = $caption ? '<figcaption class="wp-caption-text">'. $caption . '</figcaption>' : '';
+
+    // display the featured image with caption (if present) beneath the image.
+    printf( '<figure class="single-post-image wp-caption"><img src="%s" alt="%s" />%s</figure>', esc_url( $image ), $alt, $caption_html );
+}
+
+
 /**
  * Archive Post Class
  * @since 1.0.0
  *
- * Breaks the posts into two columns
+ * Breaks the posts into three columns
  * @link http://www.billerickson.net/code/grid-loop-using-post-class
  *
  * @param array $classes
@@ -133,13 +176,15 @@ function is_archive_post_class( $classes ) {
 	// Don't run on single posts or pages
 	if( is_singular() )
 		return $classes;
-	$classes[] = 'one-half';
+	$classes[] = 'one-third';
 	global $wp_query;
-	if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 2 )
+	if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 3 )
 		$classes[] = 'first';
 	return $classes;
 }
 add_filter( 'post_class', 'is_archive_post_class' );
+
+
 
 // Archive layouts
 add_action( 'genesis_header', 'is_post_layout' );

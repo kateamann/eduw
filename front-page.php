@@ -2,17 +2,17 @@
 /**
  * Front Page
  *
- * @package 	InfiniteScotland
+ * @package 	EdinburghUnwrapped
  * @author  	Kate Amann
  * @since  		1.0.0
  * @license 	GPL-2.0+
 **/
 
-add_action( 'wp_enqueue_scripts', 'is_enqueue_slick' );
+add_action( 'wp_enqueue_scripts', 'eduw_enqueue_slick' );
 wp_enqueue_script( 'home-slider-init', get_stylesheet_directory_uri() . "/js/slick-home.js", array( 'slider' ), CHILD_THEME_VERSION, true );
 
-add_action( 'genesis_after_header', 'is_home_hero', 10 );
-function is_home_hero() { 
+add_action( 'genesis_after_header', 'eduw_home_hero', 10 );
+function eduw_home_hero() { 
 	if( have_rows('home_slides') ) { ?>
 
 	<div class="home-hero">
@@ -21,7 +21,7 @@ function is_home_hero() {
 		<?php while( have_rows('home_slides') ): the_row(); 
 
 			$image = get_sub_field('image');
-			$size = 'large';
+			$size = 'hero';
 			$thumb = $image['sizes'][ $size ];
 			$width = $image['sizes'][ $size . '-width' ];
 			$height = $image['sizes'][ $size . '-height' ];

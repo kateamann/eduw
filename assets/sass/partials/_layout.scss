@@ -80,153 +80,215 @@ html {
 
 .site-inner {
 	clear: both;
-	margin: 0 auto;
+	margin: 30px auto 0;
 	padding: 30px 30px 0;
 
 	@media only screen and (min-width: $small-screen) {
-		margin-top: 70px;
 		max-width: 1200px;
+		margin-top: 106px;
 	}
 }
 
-/* Homepage
+.single-tours .site-inner,
+.home .site-inner {
+	@media only screen and (min-width: $small-screen) {
+		margin-top: 30px;
+	}
+}
+
+/* Hero blocks
 --------------------------------------------- */
 
-.home {
+.home-hero,
+.tour-hero {
+	position: relative;
+	overflow: hidden;
 
-	.home-hero {
-		position: relative;
-		height: 50vh;
-		overflow: hidden;
+	@media only screen and (min-width: $small-screen) {
+		height: calc(100vh - 106px);
+		margin-top: 106px;
+	}
+
+	.hero-overlay {
+		position: absolute;
+		color: $dark-grey;
+		text-align: center;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		top: 0;
+		display: flex;
+		align-items: flex-end;
+
+		.wrap {
+			padding: 20px;
+			border: 2px solid $purple;
+			height: auto;
+			margin: 0;
+			width: 100%;
+			background: rgba(255,255,255,0.85);
+			text-shadow: 0px 0px 15px rgba(255,255,255,0.5);
+
+			p {
+				margin-bottom: 0;
+			}
+		}
 
 		@media only screen and (min-width: $small-screen) {
-			margin-top: 108px;
-			height: calc(100vh - 108px);
-		}
-	}
-
-	a.home-slide {
-	    opacity: 0;
-	    transition: opacity 1s ease;
-	    -webkit-transition: opacity 1s ease;
-	}
-
-	a.home-slide:first-of-type {
-		opacity: 1;
-	}
- 
-	.slick-initialized a.home-slide {
-	    opacity: 1;    
-	}
-
-
-	.home-slides.slick-slider {
-		position: relative;
-		z-index:1; 
-		border: none;
-		border-radius: 0;
-		margin: 0;
-		box-sizing: border-box;
-		height: 100%;
-		text-align: center;
-
-		a {
-			color: $white;
-		}
-
-		a:focus,
-		a:hover {
-			color: $light-purple;
-		}
-
-		img {
-			position: relative;
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
-			object-position: 50% 50%;
-		}
-		
-	}
-
-	.slick-list,
-	.slick-track {
-		height: 100%;
-	}
-	.slick-dots {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: auto;
-		z-index: 2;
-		background-color: unset;
-		border: none;
-		padding: 10px;
-		display: flex;
-		justify-content: center;
-		margin: 0;
-		padding: 1rem 0;
-		list-style-type: none;
-		
-		li {
-			margin: 0 0.25rem;
-		}
-	
-		button {
-			display: block;
-			width: 1rem;
-			height: 1rem;
-			padding: 0;
 			
-			border: none;
-			border-radius: 100%;
-			background-color: $white;
-			
-			text-indent: -9999px;
-		}
-	
-		li.slick-active button {
-			background-color: $light-purple;
-		}
+			.wrap {
+				margin: 0 auto 5%;
+				width: 60%;
+				background: rgba(255,255,255,0.85);
+				text-shadow: 0px 0px 15px rgba(255,255,255,0.5);
 
-		&:focus {
-			outline: none;
+				p {
+					font-size: 18px;
+				}
+			}
 		}
 	}
 }
 
-.hero-overlay {
-	position: absolute;
-	width: 100%;
+.admin-bar.home {
+	.home-hero,
+	.tour-hero {
+		// height: calc(100vh - 162px);
+
+		// @media only screen and (min-width: $mobile-admin-bar) {
+		// 	height: calc(100vh - 148px);
+		// }
+
+		@media only screen and (min-width: $small-screen) {
+			height: calc(100vh - 138px);
+		}
+	}
+}
+
+.tour-hero {
+	img {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		object-position: 50% 50%;
+	}
+}
+
+
+
+a.home-slide {
+    opacity: 0;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+}
+
+a.home-slide:first-of-type {
+	opacity: 1;
+}
+
+.slick-initialized a.home-slide {
+    opacity: 1;    
+}
+
+.home-slides.slick-slider {
+	position: relative;
+	z-index:1; 
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	box-sizing: border-box;
 	height: 100%;
-	color: $dark-grey;
-	z-index: 2;
-	top: 0;
-	display: flex;
-	align-items: flex-end;
 	text-align: center;
 
-	.wrap {
-		margin: 0 auto 5%;
-		padding: 20px;
-		height: auto;
-		width: 60%;
+	a {
+		color: $white;
+	}
 
-		h2 {
-			font-size: 22px;
-		}
+	a:focus,
+	a:hover {
+		color: $light-purple;
+	}
 
-		p {
-			font-size: 18px;
-			margin-bottom: 0;
-		}
+	img {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		object-position: 50% 50%;
+	}
+	
+}
 
-		@media only screen and (min-width: $small-screen) {
-			background: rgba(255,255,255,0.80);
-			text-shadow: 0px 0px 15px rgba(255,255,255,0.5);
-		}
+.slick-list,
+.slick-track {
+	height: 100%;
+}
+
+.slick-dots {
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: unset;
+	border: none;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 1rem 0;
+	list-style-type: none;
+	
+	li {
+		margin: 0 0.25rem;
+	}
+
+	button {
+		display: block;
+		width: 1rem;
+		height: 1rem;
+		padding: 0;
+		
+		border: none;
+		border-radius: 100%;
+		background-color: $light-purple;
+		
+		text-indent: -9999px;
+	}
+
+	li.slick-active button {
+		background-color: $purple;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	@media only screen and (min-width: $small-screen) {
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
 	}
 }
+
+
+
+
+
+/* Tours
+--------------------------------------------- */
+
+.tour-details {
+	padding: 20px;
+	margin-bottom: 20px;
+	background-color: $light-green;
+}
+
+.entry.tours .entry-header .entry-meta {
+    display: none;
+}
+
+
+
 
 /* Content
 --------------------------------------------- */
@@ -236,6 +298,13 @@ html {
 	.content {
 		float: left;
 		width: 65%;
+	}
+
+	.archive .content,
+	.blog .content,
+	.search .content,
+	.page-template-tours-listing .content {
+		width: 100%;
 	}
 
 	.sidebar-content .content {

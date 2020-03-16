@@ -35,23 +35,14 @@ function eduw_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/custom-login.php' );
 	include_once( get_stylesheet_directory() . '/inc/navigation.php' );
 	include_once( get_stylesheet_directory() . '/inc/custom-logo.php' );
-	// include_once( get_stylesheet_directory() . '/inc/company-schema.php' );
-	
-	// Adds WooCommerce support.
-	// require_once get_stylesheet_directory() . '/woocommerce/woocommerce-setup.php';
-
-	// Adds the required WooCommerce styles and Customizer CSS.
-	// require_once get_stylesheet_directory() . '/woocommerce/woocommerce-output.php';
-
-	// Adds the Genesis Connect WooCommerce notice.
-	// require_once get_stylesheet_directory() . '/woocommerce/woocommerce-notice.php';
 
 	// Editor Styles
 	// add_theme_support( 'editor-styles' );
 	// add_editor_style( 'assets/css/editor-style.css' );
 
 	// Image Sizes
-	// add_image_size( 'eduw_featured', 400, 100, true );
+	add_image_size( 'eduw_featured', 800, 450, true );
+	add_image_size( 'hero', 1800, 1200, true );
 
 	// Gutenberg
 
@@ -117,6 +108,16 @@ function eduw_child_theme_setup() {
 			'slug'  => 'dark-gray',
 			'color' => '#333333',
 		),
+		array(
+			'name'  => __( 'Purple', CHILD_TEXT_DOMAIN ),
+			'slug'  => 'purple',
+			'color' => '#4B3383',
+		),
+		array(
+			'name'  => __( 'Pale green', CHILD_TEXT_DOMAIN ),
+			'slug'  => 'pale-green',
+			'color' => '#D4EEE1',
+		),
 	) );
 
 }
@@ -160,19 +161,19 @@ function eduw_global_enqueues() {
 		responsive_menu_settings()
 	);
 
-	wp_enqueue_script(
-		'eduw',
-		get_stylesheet_directory_uri() . '/js/eduw.js',
-		array( 'jquery' ),
-		CHILD_THEME_VERSION,
-		true
-	);
+	// wp_enqueue_script(
+	// 	'eduw',
+	// 	get_stylesheet_directory_uri() . '/js/eduw.js',
+	// 	array( 'jquery' ),
+	// 	CHILD_THEME_VERSION,
+	// 	true
+	// );
 
 }
 add_action( 'wp_enqueue_scripts', 'eduw_global_enqueues' );
 
 
-function is_enqueue_slick() {
+function eduw_enqueue_slick() {
 	wp_enqueue_style( 'slider-styles', get_stylesheet_directory_uri() . "/assets/slick/slick.css", array(), CHILD_THEME_VERSION );
 	wp_enqueue_script( 'slider', get_stylesheet_directory_uri() . "/assets/slick/slick.min.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
 }

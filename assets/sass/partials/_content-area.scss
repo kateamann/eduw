@@ -56,7 +56,7 @@ p.entry-meta {
 }
 
 .entry-footer .entry-meta {
-	padding-top: 20px;
+	// padding-top: 20px;
 }
 
 .entry-categories,
@@ -159,4 +159,20 @@ p.entry-meta {
 .comment-form-cookies-consent label {
 	display: inline;
 	padding-left: 10px;
+}
+
+
+/* Post Grid
+--------------------------------------------- */
+
+.entry.one-third {
+	padding: 20px;
+}
+
+.entry.tours.one-third {
+	background-color: $light-green;
+}
+
+.entry.post.one-third {
+	background-color: $light-purple;
 }

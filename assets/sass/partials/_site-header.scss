@@ -3,12 +3,10 @@
 
 .site-header {
 	background-color: $white;
-	border-bottom: 2px solid $purple;
-	// box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 	// padding: 0 30px;
 	
 	.wrap {
-		padding: 0 30px;
+		padding: 0 20px;
 	}
 
 	@media only screen and (min-width: $small-screen) {
@@ -80,6 +78,10 @@
 	float: left;
 	padding-bottom: 25px;
 	padding-top: 25px;
+
+	@media only screen and (min-width: $small-screen) {
+		text-align: left;
+	}
 }
 
 .wp-custom-logo .title-area {

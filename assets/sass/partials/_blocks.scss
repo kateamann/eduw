@@ -32,7 +32,7 @@ body {
 // }
 
 a {
-	color: $green;
+	color: $purple;
 	text-decoration: none;
 	// transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
@@ -140,6 +140,14 @@ video,
 img {
 	height: auto;
 	vertical-align: top;
+}
+
+.single-post-image {
+	margin-bottom: 40px;
+}
+
+.single-post-image img {
+    vertical-align: top;
 }
 
 figure {
@@ -313,17 +321,34 @@ th:first-child {
 /* Titles
 --------------------------------------------- */
 
-.archive-description .entry-title,
-.archive-title,
-.author-box-title {
-	font-size: 20px;
-	font-weight: 600;
-	margin-bottom: 10px;
+.entry-title {
+	font-size: 24px;
+	margin-bottom: 20px;
+	text-align: left;
 }
 
-.entry-title {
-	font-size: 30px;
-	margin-bottom: 10px;
+.archive-description .entry-title,
+.archive-title,
+.author-box-title,
+h1.entry-title {
+	font-size: 24px;
+	margin-bottom: 30px;
+	text-align: center;
+
+	@media only screen and (min-width: $small-screen) {
+		font-size: 30px;
+		margin-bottom: 40px;
+	}
+}
+
+.post h1.entry-title {
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+.home h2.entry-title {
+	font-size: 40px;
+	text-align: center;
 }
 
 .entry-title a,
@@ -334,6 +359,11 @@ th:first-child {
 .entry-title a:focus,
 .entry-title a:hover {
 	color: $green;
+}
+
+.post .entry-title a:focus,
+.post .entry-title a:hover {
+	color: $purple;
 }
 
 .widget-title {
@@ -452,6 +482,29 @@ img.alignright,
 .widget_calendar th {
 	text-align: center;
 }
+
+/* Accordions
+--------------------------------------------- */
+
+.entry-content {
+	.c-accordion__title {
+		background-color: $light-green;
+		padding: 10px;
+	}
+
+	.c-accordion__title:after {
+	    padding-right: 10px;
+	    font-family: "Font Awesome 5 Free";
+	    content: "\f067";
+	    color: $dark-grey;
+	    font-weight: 900;
+	}
+
+	.is-open .c-accordion__title:after {
+	    content: "\f068";
+	}
+}
+
 
 /* Featured Content
 --------------------------------------------- */
