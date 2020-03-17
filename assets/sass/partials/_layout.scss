@@ -293,10 +293,23 @@ a.home-slide:first-of-type {
 /* Content
 --------------------------------------------- */
 
+.content {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media only screen and (min-width: $small-screen) {
 
 	.content {
 		float: left;
+		max-width: unset;
+		width: 65%;
+	}
+
+	.content .intro-text {
+		float: none;
+		margin: 0 auto 40px;
 		width: 65%;
 	}
 

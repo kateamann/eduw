@@ -44,7 +44,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.button {
+.button,
+.entry-content .nf-form-content button, 
+.entry-content .nf-form-content input[type=button], 
+.entry-content .nf-form-content input[type=submit] {
 	background-color: $dark-grey;
 	border: 0;
 	color: $white;
@@ -67,14 +70,17 @@ input[type="reset"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover,
 .button:focus,
-.button:hover {
-	background-color: $green;
-	color: $white;
+.button:hover,
+.entry-content .nf-form-content button:hover, 
+.entry-content .nf-form-content input[type=button]:hover, 
+.entry-content .nf-form-content input[type=submit]:hover {
+	background-color: $light-green;
+	color: $dark-grey;
 }
 
 .entry-content .button:focus,
 .entry-content .button:hover {
-	color: $white;
+	color: $dark-grey;
 }
 
 .button {

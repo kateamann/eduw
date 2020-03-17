@@ -22,6 +22,14 @@ add_action( 'genesis_loop', 'eduw_trips_loop' );
  
 function eduw_trips_loop() {
 
+    $tours_intro = get_field('tours_intro');
+
+    if ( $tours_intro ) {
+        echo '<div class="intro-text">';
+        echo $tours_intro;
+        echo '</div>';
+    }
+
 	//Protect against arbitrary paged values
 	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
  
