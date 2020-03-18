@@ -52,8 +52,39 @@ function eduw_home_hero() {
 <?php }
 }
 
+function eduw_set_custom_entry_title_wrap( $wrap ) {
+	$wrap = 'h3';
+	return $wrap;
+}
 
-add_action( 'genesis_before_footer', 'eduw_latest_posts_loop', 1 );
+add_action( 'genesis_before_footer', 'eduw_featured_tours_loop', 1 );
+function eduw_featured_tours_loop() {
+
+	$ids = get_field('featured_tours', false, false);
+
+	$args = (array(
+		'post_type'      => 'tours',
+		'posts_per_page' => 3,
+		'no_found_rows' => true,
+		'post__in' => $ids,
+	)); 
+
+	add_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
+	?>
+
+	<div class="featured-tours">
+		<div class="wrap">
+			<h2>Featured Tours</h2>
+			<?php genesis_custom_loop( $args ); ?>
+		</div>
+	</div>
+
+	<?php
+	remove_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
+}
+
+
+add_action( 'genesis_before_footer', 'eduw_latest_posts_loop', 2 );
 function eduw_latest_posts_loop() {
 
 	$args = (array(
@@ -63,11 +94,6 @@ function eduw_latest_posts_loop() {
 	)); 
 
 	add_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
-	function eduw_set_custom_entry_title_wrap( $wrap ) {
-		$wrap = 'h3';
-		return $wrap;
-	}
-
 	?>
 
 	<div class="latest-posts">
@@ -78,6 +104,7 @@ function eduw_latest_posts_loop() {
 	</div>
 
 	<?php
+	remove_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
 }
 
 genesis();
