@@ -52,4 +52,32 @@ function eduw_home_hero() {
 <?php }
 }
 
+
+add_action( 'genesis_before_footer', 'eduw_latest_posts_loop', 1 );
+function eduw_latest_posts_loop() {
+
+	$args = (array(
+		'post_type'      => 'post',
+		'posts_per_page' => 3,
+		'no_found_rows' => true
+	)); 
+
+	add_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
+	function eduw_set_custom_entry_title_wrap( $wrap ) {
+		$wrap = 'h3';
+		return $wrap;
+	}
+
+	?>
+
+	<div class="latest-posts">
+		<div class="wrap">
+			<h2>Latest Posts</h2>
+			<?php genesis_custom_loop( $args ); ?>
+		</div>
+	</div>
+
+	<?php
+}
+
 genesis();

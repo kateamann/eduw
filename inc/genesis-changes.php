@@ -185,16 +185,20 @@ function is_archive_post_class( $classes ) {
 add_filter( 'post_class', 'is_archive_post_class' );
 
 
-
 // Archive layouts
 add_action( 'genesis_header', 'is_post_layout' );
 function is_post_layout() {
-	if ( !is_front_page() && !is_single() ) {
+	if ( !is_single() ) {
 		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 		add_action( 'genesis_entry_header', 'genesis_do_post_image', 5 );
-
+		add_action( 'genesis_entry_footer', 'is_archive_trip_type', 9 );
 		// remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 	}
+}
+
+function is_archive_trip_type() { ?>
+    <p class="tour-meta"><?php the_terms( $post->ID, 'tour-type', 'Trip type: ', ', ', ' ' );?> </p>
+    <?php
 }
 
 /**

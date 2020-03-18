@@ -46,7 +46,8 @@
 /* Entry Meta
 --------------------------------------------- */
 
-p.entry-meta {
+p.entry-meta,
+p.tour-meta {
 	font-size: 14px;
 	margin-bottom: 0;
 }
@@ -175,4 +176,8 @@ p.entry-meta {
 
 .entry.post.one-third {
 	background-color: $light-purple;
+}
+
+.home .entry.post.one-third {
+	background-color: $white;
 }
