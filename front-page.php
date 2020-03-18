@@ -60,13 +60,14 @@ function eduw_set_custom_entry_title_wrap( $wrap ) {
 add_action( 'genesis_before_footer', 'eduw_featured_tours_loop', 1 );
 function eduw_featured_tours_loop() {
 
-	$ids = get_field('featured_tours', false, false);
+	$ids = get_field('featured_tours', 'option', false, false);
 
 	$args = (array(
 		'post_type'      => 'tours',
 		'posts_per_page' => 3,
 		'no_found_rows' => true,
 		'post__in' => $ids,
+		'order'     => 'ASC',
 	)); 
 
 	add_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
