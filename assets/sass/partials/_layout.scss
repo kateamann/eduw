@@ -283,6 +283,12 @@ a.home-slide:first-of-type {
     display: none;
 }
 
+.tour-details {
+	padding: 20px;
+	margin-bottom: 20px;
+	background-color: $light-green;
+}
+
 .available-tours {
     max-width: 600px;
     margin-left: auto;
