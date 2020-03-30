@@ -41,6 +41,8 @@ function eduw_trips_by_category_loop() {
         )); 
     }
 
+    add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
+
     ?>
 
     <div class="available-tours">
@@ -50,6 +52,8 @@ function eduw_trips_by_category_loop() {
     </div>
 
     <?php
+
+    remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
 }
 
 genesis();

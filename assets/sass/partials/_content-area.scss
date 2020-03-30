@@ -49,6 +49,13 @@
 p.entry-meta,
 p.tour-meta {
 	font-size: 14px;
+}
+
+p.tour-meta {
+	margin-bottom: 20px;
+}
+
+p.entry-meta {
 	margin-bottom: 0;
 }
 
@@ -69,6 +76,19 @@ p.tour-meta {
 	content: "\2014";
 	margin: 0 6px 0 2px;
 }
+
+.tours.one-third {
+	.entry-meta {
+		display: none;
+	}
+
+	.more-link {
+		display: block;
+		margin-bottom: 0;
+	}
+}
+
+
 
 /* Pagination
 --------------------------------------------- */

@@ -74,13 +74,13 @@ input[type="submit"]:hover,
 .entry-content .nf-form-content button:hover, 
 .entry-content .nf-form-content input[type=button]:hover, 
 .entry-content .nf-form-content input[type=submit]:hover {
-	background-color: $light-green;
-	color: $dark-grey;
+	background-color: $green;
+	color: $white;
 }
 
 .entry-content .button:focus,
 .entry-content .button:hover {
-	color: $dark-grey;
+	color: $white;
 }
 
 .button {

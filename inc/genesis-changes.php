@@ -201,6 +201,18 @@ function is_archive_trip_type() { ?>
     <?php
 }
 
+
+/**
+ * Add Read More button below post excerpts/content on archives.
+ */
+function eduw_custom_add_read_more() {
+    if ( is_singular() ) {
+        return;
+    }
+
+    printf( '<a href="%s" class="more-link button">%s</a>', get_permalink(), esc_html__( 'Read More' ) );
+}
+
 /**
  * Remove Genesis Templates
  *

@@ -52,6 +52,22 @@ function eduw_home_hero() {
 <?php }
 }
 
+
+add_action( 'genesis_after_header', 'eduw_home_strapline', 11 );
+function eduw_home_strapline() { 
+	if( get_field('strapline') ) { ?>
+
+	<div class="home-strapline">
+		<div class="wrap">
+
+		<?php the_field('strapline'); ?> 
+
+		</div>
+	</div>
+
+<?php }
+}
+
 function eduw_set_custom_entry_title_wrap( $wrap ) {
 	$wrap = 'h3';
 	return $wrap;
@@ -71,6 +87,7 @@ function eduw_featured_tours_loop() {
 	)); 
 
 	add_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
+	add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
 	?>
 
 	<div class="featured-tours">
@@ -82,6 +99,7 @@ function eduw_featured_tours_loop() {
 
 	<?php
 	remove_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
+	remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
 }
 
 
