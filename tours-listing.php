@@ -41,7 +41,7 @@ function eduw_trips_by_category_loop() {
         )); 
     }
 
-    add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 20 );
+    add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
 
     ?>
 
@@ -53,7 +53,7 @@ function eduw_trips_by_category_loop() {
 
     <?php
 
-    remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 20 );
+    remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
 }
 
 genesis();

@@ -192,6 +192,12 @@ p.entry-meta {
 
 .entry.tours {
 	background-color: $light-green;
+	display: flex;
+	flex-flow: column nowrap;
+
+	.entry-footer {
+		margin-top: auto;
+	}
 }
 
 .entry.post {

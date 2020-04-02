@@ -483,21 +483,26 @@ a.home-slide:first-of-type {
     .entry {
     	margin-bottom: 0;
     }
-}
 
-@media only screen and (min-width: $smaller-screen) {
-    .articles-grid {
+    @media only screen and (min-width: $smaller-screen) {
         -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
-}
 
-@media only screen and (min-width: $medium-screen) {
-    .articles-grid {
+	@media only screen and (min-width: $medium-screen) {
         -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-    }
+   	}
 }
+
+.featured.articles-grid {
+	@media only screen and (min-width: $medium-screen) {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+   	}
+}
+
+
 
 
 /* Print Styles

@@ -169,8 +169,7 @@ function is_post_layout() {
 	if ( !is_single() ) {
 		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 		add_action( 'genesis_entry_header', 'genesis_do_post_image', 5 );
-		add_action( 'genesis_entry_footer', 'is_archive_trip_type', 9 );
-		// remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+		add_action( 'genesis_entry_content', 'is_archive_trip_type', 10 );
 	}
 }
 

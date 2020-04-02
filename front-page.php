@@ -87,13 +87,13 @@ function eduw_featured_tours_loop() {
 	)); 
 
 	add_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
-	add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 20 );
+	add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
 	?>
 
 	<div class="featured-tours">
 		<div class="wrap">
 			<h2>Featured Tours</h2>
-			<div class="articles-grid">
+			<div class="featured articles-grid">
 				<?php genesis_custom_loop( $args ); ?>
 			</div>
 		</div>
@@ -101,7 +101,7 @@ function eduw_featured_tours_loop() {
 
 	<?php
 	remove_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
-	remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 20 );
+	remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
 }
 
 
