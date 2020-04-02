@@ -242,14 +242,19 @@
 
 .menu-toggle:focus,
 .menu-toggle:hover,
-.sub-menu-toggle:focus,
-.sub-menu-toggle:hover,
 .current-menu-item .sub-menu-toggle,
 .current-menu-parent .sub-menu-toggle,
 .single-post .blog-in-menu .sub-menu-toggle {
 	background-color: transparent;
 	border-width: 0;
 	color: $white;
+}
+
+.sub-menu-toggle:focus,
+.sub-menu-toggle:hover {
+	background-color: transparent;
+	border-width: 0;
+	color: $dark-grey;
 }
 
 .menu-toggle {
@@ -313,7 +318,7 @@
 		}
 
 		.genesis-nav-menu a {
-			padding: 27px 15px;
+			padding: 42px 15px;
 		}
 
 		.genesis-nav-menu .sub-menu a {
@@ -348,8 +353,8 @@
 /* Hamburgers
 --------------------------------------------- */
 .hamburger {
-	height: 70px;
-	padding: 22px 0 18px;
+	height: 74px;
+	padding: 26px 0 18px;
 	display: inline-block;
 	cursor: pointer;
 	transition-property: opacity, filter;

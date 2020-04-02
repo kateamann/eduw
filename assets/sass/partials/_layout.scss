@@ -85,7 +85,7 @@ html {
 
 	@media only screen and (min-width: $small-screen) {
 		max-width: 1200px;
-		margin-top: 106px;
+		margin-top: 136px;
 	}
 }
 
@@ -99,25 +99,14 @@ html {
 /* Hero blocks
 --------------------------------------------- */
 
-.home-hero {
-	@media only screen and (min-width: $small-screen) {
-		height: calc(100vh - 155px);
-	}
-}
-
-.tour-hero {
-	@media only screen and (min-width: $small-screen) {
-		height: calc(100vh - 106px);
-	}
-}
-
 .home-hero,
 .tour-hero {
 	position: relative;
 	overflow: hidden;
+	height: 55vh;
 
 	@media only screen and (min-width: $small-screen) {
-		margin-top: 106px;
+		margin-top: 136px;
 	}
 
 	.hero-overlay {
@@ -156,10 +145,23 @@ html {
 	}
 }
 
+.home-hero {
+	@media only screen and (min-width: $small-screen) {
+		height: calc(100vh - 185px);
+	}
+}
+
+.tour-hero {
+	@media only screen and (min-width: $small-screen) {
+		height: calc(100vh - 136px);
+	}
+}
+
 .admin-bar.home .home-hero {
 
 	@media only screen and (min-width: $small-screen) {
-		height: calc(100vh - 187px);
+		height: calc(100vh - 217px);
+		margin-top: 136px;
 	}
 }
 
@@ -167,7 +169,8 @@ html {
 .admin-bar .tour-hero {
 
 	@media only screen and (min-width: $small-screen) {
-		height: calc(100vh - 138px);
+		height: calc(100vh - 168px);
+		margin-top: 136px;
 	}
 }
 
