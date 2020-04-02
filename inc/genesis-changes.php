@@ -190,6 +190,12 @@ function eduw_custom_add_read_more() {
     printf( '<a href="%s" class="more-link button">%s</a>', get_permalink(), esc_html__( 'Read More' ) );
 }
 
+//* Modify the length of post excerpts
+add_filter( 'excerpt_length', 'sp_excerpt_length' );
+function sp_excerpt_length( $length ) {
+	return 20; // pull first 50 words
+}
+
 /**
  * Remove Genesis Templates
  *

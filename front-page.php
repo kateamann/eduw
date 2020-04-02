@@ -120,7 +120,7 @@ function eduw_latest_posts_loop() {
 	<div class="latest-posts">
 		<div class="wrap">
 			<h2>Latest Posts</h2>
-			<div class="articles-grid">
+			<div class="featured-three articles-grid">
 				<?php genesis_custom_loop( $args ); ?>
 			</div>
 		</div>

@@ -502,6 +502,13 @@ a.home-slide:first-of-type {
    	}
 }
 
+.featured-three.articles-grid {
+	@media only screen and (min-width: $smaller-screen) {
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-gap: 15px;
+        grid-template-columns: 1fr 1fr 1fr;
+   	}
+}
 
 
 
