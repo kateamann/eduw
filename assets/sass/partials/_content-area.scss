@@ -77,7 +77,8 @@ p.entry-meta {
 	margin: 0 6px 0 2px;
 }
 
-.entry.tours.one-third {
+.articles-grid .entry.tours {
+
 	.entry-meta {
 		display: none;
 	}
@@ -87,7 +88,6 @@ p.entry-meta {
 		margin-bottom: 0;
 	}
 }
-
 
 
 /* Pagination
@@ -186,14 +186,14 @@ p.entry-meta {
 /* Post Grid
 --------------------------------------------- */
 
-.entry.one-third {
+.entry {
 	padding: 20px;
 }
 
-.entry.tours.one-third {
+.entry.tours {
 	background-color: $light-green;
 }
 
-.entry.post.one-third {
+.entry.post {
 	background-color: $light-purple;
 }

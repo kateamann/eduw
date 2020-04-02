@@ -162,28 +162,6 @@ function eduw_featured_image() {
 }
 
 
-/**
- * Archive Post Class
- * @since 1.0.0
- *
- * Breaks the posts into three columns
- * @link http://www.billerickson.net/code/grid-loop-using-post-class
- *
- * @param array $classes
- * @return array
- */
-function is_archive_post_class( $classes ) {
-	// Don't run on single posts or pages
-	if( is_singular() )
-		return $classes;
-	$classes[] = 'one-third';
-	global $wp_query;
-	if( 0 == $wp_query->current_post || 0 == $wp_query->current_post % 3 )
-		$classes[] = 'first';
-	return $classes;
-}
-add_filter( 'post_class', 'is_archive_post_class' );
-
 
 // Archive layouts
 add_action( 'genesis_header', 'is_post_layout' );

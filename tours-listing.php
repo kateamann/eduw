@@ -41,19 +41,19 @@ function eduw_trips_by_category_loop() {
         )); 
     }
 
-    add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
+    add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 20 );
 
     ?>
 
     <div class="available-tours">
-        <div class="wrap">
+        <div class="articles-grid">
             <?php genesis_custom_loop( $args ); ?>
         </div>
     </div>
 
     <?php
 
-    remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
+    remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 20 );
 }
 
 genesis();

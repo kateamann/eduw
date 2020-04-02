@@ -80,26 +80,28 @@ function eduw_featured_tours_loop() {
 
 	$args = (array(
 		'post_type'      => 'tours',
-		'posts_per_page' => 3,
+		'posts_per_page' => 6,
 		'no_found_rows' => true,
 		'post__in' => $ids,
 		'order'     => 'ASC',
 	)); 
 
 	add_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
-	add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
+	add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 20 );
 	?>
 
 	<div class="featured-tours">
 		<div class="wrap">
 			<h2>Featured Tours</h2>
-			<?php genesis_custom_loop( $args ); ?>
+			<div class="articles-grid">
+				<?php genesis_custom_loop( $args ); ?>
+			</div>
 		</div>
 	</div>
 
 	<?php
 	remove_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
-	remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
+	remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 20 );
 }
 
 
@@ -118,7 +120,9 @@ function eduw_latest_posts_loop() {
 	<div class="latest-posts">
 		<div class="wrap">
 			<h2>Latest Posts</h2>
-			<?php genesis_custom_loop( $args ); ?>
+			<div class="articles-grid">
+				<?php genesis_custom_loop( $args ); ?>
+			</div>
 		</div>
 	</div>
 
