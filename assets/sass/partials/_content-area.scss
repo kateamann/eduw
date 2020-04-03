@@ -36,7 +36,14 @@
 	code {
 		background-color: $lighter-grey;
 	}
+
+	.blocks-gallery-grid, .wp-block-gallery {
+	    padding: 0;
+	    margin: 0;
+	}
 }
+
+
 
 .content .sticky {
 	background-color: $lighter-grey;
@@ -84,8 +91,30 @@ p.entry-meta {
 	}
 
 	.more-link {
-		display: block;
 		margin-bottom: 0;
+	}
+}
+
+/* Post Grid
+--------------------------------------------- */
+
+.articles-grid {
+	.entry {
+		padding: 20px;
+	}
+
+	.entry.tours {
+		background-color: $light-green;
+		display: flex;
+		flex-flow: column nowrap;
+
+		.entry-footer {
+			margin-top: auto;
+		}
+	}
+
+	.entry.post {
+		background-color: $light-purple;
 	}
 }
 
@@ -180,26 +209,4 @@ p.entry-meta {
 .comment-form-cookies-consent label {
 	display: inline;
 	padding-left: 10px;
-}
-
-
-/* Post Grid
---------------------------------------------- */
-
-.entry {
-	padding: 20px;
-}
-
-.entry.tours {
-	background-color: $light-green;
-	display: flex;
-	flex-flow: column nowrap;
-
-	.entry-footer {
-		margin-top: auto;
-	}
-}
-
-.entry.post {
-	background-color: $light-purple;
 }

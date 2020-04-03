@@ -50,6 +50,8 @@ add_action( 'genesis_before_entry', 'eduw_tour_quick_details', 5 );
 function eduw_tour_quick_details() { ?>
 
     <div class="tour-details">
+        <div><strong><?php echo esc_html( get_the_title() ); ?></strong></div>
+        <br/>
         <div><strong>Duration</strong> - <?php display_duration(); ?></div>
         <div><strong>Type of tour</strong> - <?php display_tour_type();  ?></div>
         <div><strong>Start point</strong> - <?php display_start_point(); ?></div>

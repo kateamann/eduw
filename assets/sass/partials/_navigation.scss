@@ -244,6 +244,7 @@
 .menu-toggle:hover,
 .current-menu-item .sub-menu-toggle,
 .current-menu-parent .sub-menu-toggle,
+.current-menu-parent .sub-menu-toggle.activated,
 .single-post .blog-in-menu .sub-menu-toggle {
 	background-color: transparent;
 	border-width: 0;
@@ -274,6 +275,8 @@
 	right: 0;
 	top: 0;
 	z-index: 100;
+	width: 100%;
+	text-align: right;
 }
 
 .sub-menu .sub-menu-toggle {
