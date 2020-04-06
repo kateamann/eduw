@@ -55,7 +55,7 @@ function eduw_tour_quick_details() { ?>
         <div><strong>Type of tour</strong> - <?php display_tour_type();  ?></div>
         <div><strong>Start point</strong> - <?php display_start_point(); ?></div>
         <div><strong>Finish point</strong> - <?php display_end_point(); ?></div>
-        <div><strong>Tour price</strong> - Starts at <?php display_tour_price(); ?></div>
+        <div><strong>Tour price</strong> - <?php display_tour_price(); ?></div>
     </div>
     
     <?php
