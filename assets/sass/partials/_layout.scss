@@ -338,6 +338,53 @@ a.home-slide:first-of-type {
 	}
 }
 
+/* Testimonials
+--------------------------------------------- */
+
+.home .testimonials {
+	color: $white;
+	background-color: $dark-green;
+	padding: 40px;
+
+	h2 {
+		text-align: center;
+	}
+
+	a {
+		color: $light-green;
+	}
+
+	a:focus,
+	a:hover {
+		color: $white;
+	}
+
+	.testimonial-entry:last-of-type {
+		margin-bottom: 0;
+	}
+
+	@media only screen and (min-width: $small-screen) {
+		.wrap {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		.testimonial-entry {
+			margin-bottom: 0;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.testimonial-entry-mobile-first-item-row,
+		.testimonial-entry-mobile-last-item-row {
+		    width: 100%;
+		    margin-right: 0;
+		}
+	}
+
+}
+
+
 
 /* Content
 --------------------------------------------- */

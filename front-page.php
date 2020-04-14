@@ -130,4 +130,16 @@ function eduw_latest_posts_loop() {
 	remove_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
 }
 
+
+add_action( 'genesis_before_footer', 'is_home_testimonials', 3 );
+function is_home_testimonials() { ?>
+	<div class="testimonials">
+		<div class="wrap">
+		<h2>What our customers say</h2>
+
+		<?php echo do_shortcode( '[testimonials display_content=full columns=3 showposts=3 orderby=rand]' ); ?>
+		</div>
+	</div><?php
+}
+
 genesis();
