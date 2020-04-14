@@ -395,6 +395,12 @@ a.home-slide:first-of-type {
     margin-right: auto;
 }
 
+.archive .content,
+.blog .content,
+.search .content {
+	width: 100%;
+}
+
 @media only screen and (min-width: $small-screen) {
 
 	.content {
@@ -407,12 +413,6 @@ a.home-slide:first-of-type {
 		float: none;
 		margin: 0 auto 40px;
 		width: 65%;
-	}
-
-	.archive .content,
-	.blog .content,
-	.search .content {
-		width: 100%;
 	}
 
 	.sidebar-content .content {
@@ -520,10 +520,7 @@ a.home-slide:first-of-type {
 ---------------------------------------------------------------------------- */
 
 .articles-grid {
-    display: -ms-grid;
     display: grid;
-
-    -ms-grid-columns: 1fr;
     grid-gap: 30px;
     grid-template-columns: 1fr;
 
@@ -532,26 +529,22 @@ a.home-slide:first-of-type {
     }
 
     @media only screen and (min-width: $smaller-screen) {
-        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
 
 	@media only screen and (min-width: $medium-screen) {
-        -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
    	}
 }
 
 .featured.articles-grid {
 	@media only screen and (min-width: $medium-screen) {
-        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
    	}
 }
 
 .featured-three.articles-grid {
 	@media only screen and (min-width: $smaller-screen) {
-        -ms-grid-columns: 1fr 1fr 1fr;
         grid-gap: 15px;
         grid-template-columns: 1fr 1fr 1fr;
    	}

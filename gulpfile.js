@@ -16,7 +16,8 @@ let sassOptions = {
 };
 
 let autoprefixerOptions = {
-  browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+  browsers: ['last 2 versions', '> 5%', 'Firefox ESR'],
+  grid: 'autoplace'
 };
 
 
@@ -28,7 +29,7 @@ gulp.task('sass', function () {
     .pipe(sass(sassOptions).on('error', sass.logError))
 
     .pipe(postcss([
-      autoprefixer()
+      autoprefixer(autoprefixerOptions)
     ]))
 
     .pipe(sourcemaps.write())
