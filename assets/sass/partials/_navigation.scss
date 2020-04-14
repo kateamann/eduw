@@ -240,6 +240,13 @@
 	}
 }
 
+.sub-menu-toggle:focus,
+.sub-menu-toggle:hover {
+	background-color: transparent;
+	border-width: 0;
+	color: $dark-grey;
+}
+
 .menu-toggle:focus,
 .menu-toggle:hover,
 .current-menu-item .sub-menu-toggle,
@@ -249,13 +256,6 @@
 	background-color: transparent;
 	border-width: 0;
 	color: $white;
-}
-
-.sub-menu-toggle:focus,
-.sub-menu-toggle:hover {
-	background-color: transparent;
-	border-width: 0;
-	color: $dark-grey;
 }
 
 .menu-toggle {
@@ -281,6 +281,7 @@
 
 .sub-menu .sub-menu-toggle {
 	padding: 12px 10px;
+	width: auto;
 }
 
 .sub-menu-toggle::before {
