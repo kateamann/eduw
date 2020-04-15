@@ -549,6 +549,7 @@ a.home-slide:first-of-type {
     }
 
 	@media only screen and (min-width: $medium-screen) {
+		grid-gap: 30px;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto auto auto auto;
    	}
@@ -556,6 +557,7 @@ a.home-slide:first-of-type {
 
 .featured.articles-grid {
 	@media only screen and (min-width: $medium-screen) {
+		grid-gap: 30px;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto;
    	}
