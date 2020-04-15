@@ -185,7 +185,6 @@ html {
 		left: 50%;
 		transform: translate(-50%, -50%);
 
-		height: 100%;
 		width: 100%;
 		object-fit: cover;
 		object-position: 50% 50%;
@@ -234,8 +233,7 @@ a.home-slide:first-of-type {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		
-		height: 100%;
+
 		width: 100%;
 		object-fit: cover;
 		object-position: 50% 50%;
@@ -534,30 +532,32 @@ a.home-slide:first-of-type {
 ---------------------------------------------------------------------------- */
 
 .articles-grid {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
 
     .entry {
-    	margin-bottom: 0;
+    	margin-bottom: 30px;
     }
 
     @media only screen and (min-width: $smaller-screen) {
+    	display: grid;
+    	grid-gap: 30px;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: auto auto auto auto auto auto;
+
+        .entry {
+	    	margin-bottom: 0;
+	    }
     }
 
 	@media only screen and (min-width: $medium-screen) {
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: auto auto auto auto;
    	}
 }
 
 .featured.articles-grid {
 	@media only screen and (min-width: $medium-screen) {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: auto auto auto;
    	}
 }
 
