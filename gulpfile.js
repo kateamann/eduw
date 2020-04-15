@@ -16,7 +16,7 @@ let sassOptions = {
 };
 
 let autoprefixerOptions = {
-  browsers: ['last 2 versions', '> 5%', 'Firefox ESR'],
+  overrideBrowserslist: ['last 2 versions', '> 5%', 'Firefox ESR'],
   grid: 'autoplace'
 };
 

@@ -523,6 +523,7 @@ a.home-slide:first-of-type {
     display: grid;
     grid-gap: 30px;
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
 
     .entry {
     	margin-bottom: 0;
@@ -530,16 +531,19 @@ a.home-slide:first-of-type {
 
     @media only screen and (min-width: $smaller-screen) {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
     }
 
 	@media only screen and (min-width: $medium-screen) {
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
    	}
 }
 
 .featured.articles-grid {
 	@media only screen and (min-width: $medium-screen) {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
    	}
 }
 
@@ -547,6 +551,7 @@ a.home-slide:first-of-type {
 	@media only screen and (min-width: $smaller-screen) {
         grid-gap: 15px;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
    	}
 }
 
