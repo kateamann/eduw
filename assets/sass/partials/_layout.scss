@@ -411,6 +411,7 @@ a.home-slide:first-of-type {
 .blog .content,
 .search .content {
 	width: 100%;
+	max-width: 100%;
 }
 
 @media only screen and (min-width: $small-screen) {
