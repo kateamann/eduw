@@ -106,7 +106,7 @@ h1 {
 }
 
 h2 {
-	font-size: 27px;
+	font-size: 26px;
 }
 
 h3 {
@@ -322,7 +322,7 @@ th:first-child {
 --------------------------------------------- */
 
 .entry-title {
-	font-size: 24px;
+	font-size: 30px;
 	margin-bottom: 20px;
 	text-align: left;
 }
@@ -331,12 +331,11 @@ th:first-child {
 .archive-title,
 .author-box-title,
 h1.entry-title {
-	font-size: 24px;
+	font-size: 30px;
 	margin-bottom: 30px;
 	text-align: center;
 
 	@media only screen and (min-width: $small-screen) {
-		font-size: 30px;
 		margin-bottom: 40px;
 	}
 }
