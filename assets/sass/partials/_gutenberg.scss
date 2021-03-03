@@ -172,12 +172,12 @@
 ---------------------------------------------------------------------------- */
 
 .content .wp-block-button .wp-block-button__link {
-	background-color: #333;
+	background-color: $dark-grey;
 	border: 0;
-	border-radius: 5px;
-	color: #fff;
+	border-radius: 0;
+	color: $white;
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 600;
 	padding: 15px 30px;
 	text-align: center;
@@ -188,8 +188,8 @@
 
 .content .wp-block-button .wp-block-button__link:focus,
 .content .wp-block-button .wp-block-button__link:hover {
-	background-color: #0072e5;
-	color: #fff;
+	background-color: $green;
+	color: $white;
 }
 
 /* Button Variations */
@@ -206,7 +206,7 @@
 
 .content .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .content .wp-block-button.is-style-outline .wp-block-button__link:hover {
-	color: #0073e5;
+	color: $green;
 }
 
 /* Blockquotes and captions

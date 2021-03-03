@@ -51,11 +51,11 @@ function eduw_tour_quick_details() { ?>
 
     <div class="tour-details">
         <div><strong>Tour name</strong> - <?php echo esc_html( get_the_title() ); ?></div>
-        <div><strong>Duration</strong> - <?php display_duration(); ?></div>
-        <div><strong>Type of tour</strong> - <?php display_tour_type();  ?></div>
-        <div><strong>Start point</strong> - <?php display_start_point(); ?></div>
-        <div><strong>Finish point</strong> - <?php display_end_point(); ?></div>
-        <div><strong>Tour price</strong> - <?php display_tour_price(); ?></div>
+        <?php display_duration(); ?>
+        <?php display_tour_type();  ?>
+        <?php display_start_point(); ?>
+        <?php display_end_point(); ?>
+        <?php display_tour_price(); ?>
     </div>
     
     <?php
@@ -68,41 +68,42 @@ function eduw_tour_quick_details() { ?>
 function display_duration() { 
     $duration = get_field('duration');
 
-    if( $duration ) { 
-    	echo $duration; 
-    }
+    if( $duration ) { ?>
+        <div><strong>Duration</strong> - <?php echo $duration; ?></div>
+    <?php }
 }
 
 function display_tour_type() { 
     $tour_type = get_field('tour_type');
 
-    if( $tour_type ) { 
-        echo $tour_type; 
-    }
+    if( $tour_type ) { ?>
+        <div><strong>Type of tour</strong> - <?php echo $tour_type; ?></div>
+    <?php }
 }
 
 function display_start_point() { 
     $start_point = get_field('start_point');
 
-    if( $start_point ) { 
-        echo $start_point; 
-    }
+    if( $start_point ) { ?>
+        <div><strong>Start point</strong> - <?php echo $start_point; ?></div>
+    <?php }
 }
 
 function display_end_point() { 
     $end_point = get_field('end_point');
 
-    if( $end_point ) { 
-        echo $end_point; 
-    }
+
+    if( $end_point ) { ?>
+        <div><strong>End point</strong> - <?php echo $end_point; ?></div>
+    <?php }
 }
 
 function display_tour_price() { 
     $tour_price = get_field('tour_price');
 
-    if( $tour_price ) { 
-    	echo $tour_price; 
-    }
+    if( $tour_price ) { ?>
+        <div><strong>Tour price</strong> - <?php echo $tour_price; ?></div>
+    <?php }
 }
 
 
