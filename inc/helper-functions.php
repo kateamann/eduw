@@ -10,6 +10,29 @@
 
 
 /**
+ * Adds Tour Link block
+ */
+add_action('acf/init', 'my_acf_init_block_types');
+function my_acf_init_block_types() {
+
+    // Check function exists.
+    if( function_exists('acf_register_block_type') ) {
+
+        // register a testimonial block.
+        acf_register_block_type(array(
+            'name'              => 'tour-link',
+            'title'             => __('Tour Link'),
+            'description'       => __('A tour link block.'),
+            'render_template'   => 'inc/blocks/tour-link.php',
+            'category'          => 'formatting',
+            'icon'              => 'dashicons dashicons-tickets-alt',
+            'keywords'          => array( 'tour', 'link' ),
+        ));
+    }
+}
+
+
+/**
  * Adds company data admin page 
  * `options_page` is going to be the name of ACF group we use to set up the fields
  *  

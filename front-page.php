@@ -8,6 +8,13 @@
  * @license 	GPL-2.0+
 **/
 
+add_action( 'wp_head', 'eduw_home_schema', 10 );
+function eduw_home_schema() {
+	if (get_field('homepage_schema', 'options')) { 
+		echo the_field('homepage_schema', 'options');
+	}
+}
+
 add_action( 'wp_enqueue_scripts', 'eduw_enqueue_slick' );
 wp_enqueue_script( 'home-slider-init', get_stylesheet_directory_uri() . "/js/slick-home.js", array( 'slider' ), CHILD_THEME_VERSION, true );
 
@@ -72,38 +79,6 @@ function eduw_set_custom_entry_title_wrap( $wrap ) {
 	$wrap = 'h3';
 	return $wrap;
 }
-
-add_action( 'genesis_before_footer', 'eduw_featured_tours_loop', 1 );
-function eduw_featured_tours_loop() {
-
-	$ids = get_field('featured_tours', 'option', false, false);
-
-	$args = (array(
-		'post_type'      => 'tours',
-		'posts_per_page' => 6,
-		'no_found_rows' => true,
-		'post__in' => $ids,
-		'order'     => 'ASC',
-	)); 
-
-	add_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
-	add_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
-	?>
-
-	<div class="featured-tours">
-		<div class="wrap">
-			<h2>Featured Tours</h2>
-			<div class="featured articles-grid">
-				<?php genesis_custom_loop( $args ); ?>
-			</div>
-		</div>
-	</div>
-
-	<?php
-	remove_filter( 'genesis_entry_title_wrap', 'eduw_set_custom_entry_title_wrap' );
-	remove_action( 'genesis_entry_footer', 'eduw_custom_add_read_more', 10 );
-}
-
 
 add_action( 'genesis_before_footer', 'eduw_latest_posts_loop', 2 );
 function eduw_latest_posts_loop() {

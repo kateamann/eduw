@@ -118,6 +118,22 @@ p.entry-meta {
 	}
 }
 
+.tour-link {
+	display: block;
+	background-color: $light-green;
+	padding: 20px;
+	margin-bottom: 20px;
+	height: calc(100% - 20px);
+
+	.wp-post-image {
+		margin-bottom: 20px;
+	}
+
+	.more-link {
+		margin-bottom: 0;
+	}
+}
+
 
 /* Pagination
 --------------------------------------------- */

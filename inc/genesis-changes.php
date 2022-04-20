@@ -44,6 +44,12 @@ add_theme_support( 'genesis-accessibility', array(
 	'screen-reader-text',
 ) );
 
+// Enable the block-based widget editor
+add_filter( 'use_widgets_block_editor', '__return_true' );
+
+// Enable excerpts on pages
+add_post_type_support( 'page', 'excerpt' );
+
 // Remove Genesis Layout Settings
 remove_theme_support( 'genesis-inpost-layouts' );
 
@@ -58,18 +64,6 @@ function remove_genesis_page_post_scripts_box() {
 
 //* Remove Genesis in-post SEO Settings
 remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
-
-
-// add_action( 'init', 'custom_post_type_support', 11 );
-// function custom_post_type_support() {
-// 	remove_post_type_support( 'page', array( 'genesis-seo', 'genesis-scripts', 'genesis-layouts' ) );
-// 	// remove_post_type_support( 'post-type', 'genesis-seo' );
-// 	// remove_post_type_support( 'post-type', 'genesis-scripts' );
-// 	// remove_post_type_support( 'post-type', 'genesis-layouts' );
-// }
-
-// Remove admin bar styling
-// add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
 // Remove Edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
@@ -89,9 +83,6 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 unregister_sidebar( 'header-right' );
 unregister_sidebar( 'sidebar' );
 unregister_sidebar( 'sidebar-alt' );
-
-// Adds support for after entry widget.
-// add_theme_support( 'genesis-after-entry-widget-area' );
 
 add_filter( 'genesis_pre_get_option_site_layout', 'custom_set_single_posts_layout' );
 /**
@@ -125,7 +116,6 @@ function eduw_blog_sidebar() {
 	}
 }
 add_action( 'genesis_sidebar', 'eduw_blog_sidebar', 6 );
-
 
 
 

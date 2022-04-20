@@ -1,7 +1,7 @@
 body {
 	color: #333;
-	font-family: "Source Sans Pro", sans-serif;
-	font-size: 18px;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.625;
 }
@@ -10,7 +10,7 @@ p,
 ul,
 ol,
 dl {
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1.625;
 }
 
@@ -37,7 +37,8 @@ dl {
 ---------------------------------------------------------------------------- */
 
 a {
-	color: #0073e5;
+	color: #4b3383;
+    text-decoration: none;
 }
 
 h1,
@@ -46,7 +47,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: 'Lato', sans-serif;
 	font-weight: 400;
 	line-height: 1.2;
 	margin: 0 0 20px;
@@ -57,18 +58,15 @@ h1 {
 }
 
 h2 {
-	font-size: 27px;
+	font-size: 26px;
 }
 
 h3 {
 	font-size: 24px;
-	font-weight: 600;
 }
 
 h4 {
 	font-size: 20px;
-	font-weight: 600;
-	margin-top: 40px;
 }
 
 h5 {
@@ -80,7 +78,7 @@ h6 {
 }
 
 .editor-post-title__block .editor-post-title__input {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: 'Lato', sans-serif;
 	font-size: 30px;
 	font-weight: 400;
 	line-height: 1.2;
@@ -146,7 +144,7 @@ p.has-background.light-text a:hover {
 
 .wp-block-quote p,
 .wp-block-pullquote p {
-	font-family: "Source Sans Pro", serif;
+	font-family: 'Lato', sans-serif;
 	font-size: 21px !important;
 	font-style: italic;
 	line-height: 1.8;
@@ -178,7 +176,7 @@ p.has-background.light-text a:hover {
 .wp-block-pullquote .wp-block-pullquote__citation {
 	color: #666;
 	display: block;
-	font-family: "Source Sans Pro", serif;
+	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 	font-style: italic;
 	margin-top: -25px;
@@ -255,7 +253,7 @@ p.has-background.light-text a:hover {
 
 .wp-block-image figcaption {
 	color: #666;
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: 'Lato', sans-serif;
 	font-size: 14px;
 	font-style: italic;
 	margin-top: 10px;
@@ -336,16 +334,15 @@ hr.wp-block-separator.is-style-dots {
 /* Buttons
 ---------------------------------------------------------------------------- */
 
-.wp-block-button .wp-block-button__link {
+.wp-block-button .wp-block-button__link,
+.tour-link .more-link {
 	background-color: #333;
 	border: 0;
-	border-radius: 5px;
 	color: #fff;
 	cursor: pointer;
-	font-size: 16px;
-	font-family: "Source Sans Pro", sans-serif;
+	font-size: 15px;
+	font-family: 'Lato', sans-serif;
 	font-weight: 600;
-	line-height: 24px;
 	padding: 15px 30px;
 	text-align: center;
 	text-decoration: none;
@@ -365,8 +362,11 @@ hr.wp-block-separator.is-style-dots {
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:hover {
-	color: #0073e5;
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.tour-link .more-link:focus,
+.tour-link .more-link:hover {
+	background-color: #09784B;
+	color: #ffffff;
 }
 
 /* Galleries
@@ -421,4 +421,31 @@ hr.wp-block-separator.is-style-dots {
 
 .wp-block[data-align="full"] .wp-block-columns > .editor-inner-blocks {
 	padding: 0 30px;
+}
+
+/* Tour link block
+---------------------------------------------------------------------------- */
+.wp-block-acf-tour-link .tour-link {
+	background-color: #D4EEE1;
+	padding: 20px;
+	margin-bottom: 20px;
+	height: calc(100% - 20px);
+}
+
+.wp-block-acf-tour-link .tour-link .wp-post-image {
+	margin-bottom: 20px;
+}
+
+.wp-block-acf-tour-link .tour-link h2 a {
+	color: #333333;
+}
+
+.wp-block-acf-tour-link .tour-link h2 a:focus,
+.wp-block-acf-tour-link .tour-link h2 a:hover
+ {
+	color: #09784B;
+}
+
+.wp-block-acf-tour-link .tour-link .more-link {
+	margin-bottom: 0;
 }

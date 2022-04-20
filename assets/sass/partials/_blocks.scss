@@ -350,29 +350,28 @@ h1.entry-title {
 	text-align: center;
 }
 
-article h2.entry-title {
+article h2.entry-title,
+.tour-link h2 {
 	font-size: 24px;
 }
 
 .entry-title a,
-.sidebar .widget-title a {
+.sidebar .widget-title a,
+.tour-link h2 a {
 	color: $dark-grey;
 }
 
 .entry-title a:focus,
-.entry-title a:hover {
+.entry-title a:hover,
+.tour-link h2 a:focus,
+.tour-link h2 a:hover
+ {
 	color: $green;
 }
 
 .post .entry-title a:focus,
 .post .entry-title a:hover {
 	color: $purple;
-}
-
-.widget-title {
-	font-size: 18px;
-	font-weight: 600;
-	margin-bottom: 20px;
 }
 
 /* WordPress
@@ -448,12 +447,13 @@ img.alignright,
 ---------------------------------------------------------------------------- */
 
 .widget {
-	margin-bottom: 40px;
-}
+	margin-bottom: 20px;
 
-.widget p:last-child,
-.widget ul > li:last-of-type {
-	margin-bottom: 0;
+	h1, h2, h3, h4, h5, h6,
+	p:last-child,
+	ul > li:last-of-type {
+		margin-bottom: 0;
+	}
 }
 
 .widget ul > li {

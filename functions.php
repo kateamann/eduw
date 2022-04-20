@@ -37,8 +37,8 @@ function eduw_child_theme_setup() {
 	include_once( get_stylesheet_directory() . '/inc/custom-logo.php' );
 
 	// Editor Styles
-	// add_theme_support( 'editor-styles' );
-	// add_editor_style( 'assets/css/editor-style.css' );
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'assets/css/editor-style.css' );
 
 	// Image Sizes
 	add_image_size( 'eduw_featured', 800, 450, true );
