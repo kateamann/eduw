@@ -36,6 +36,6 @@ if( $tour_link ):
         <a href="<?php echo esc_url( $permalink ); ?>"><?php echo $image; ?></a>
         <h2><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h2>
         <p class="tour-excerpt"><?php echo esc_html( $excerpt ); ?></p>
-        <button href="<?php echo esc_url( $permalink ); ?>"class="more-link">Read More</button>
+        <a href="<?php echo esc_url( $permalink ); ?>"class="more-link button">Read More</a>
     </div>
 <?php endif;
